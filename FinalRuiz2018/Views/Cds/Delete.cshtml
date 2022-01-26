@@ -1,0 +1,104 @@
+﻿@model FinalRuiz2018.Models.Cd
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<h2>Borrar</h2>
+
+<h3>¿Desea borrar el Cd?</h3>
+<div>
+    <h4>Cd</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estilo.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estilo.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interprete.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interprete.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.ProductoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.ProductoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pistas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pistas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AñoGrabacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AñoGrabacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioCosto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioCosto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioVenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioVenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        @Html.ActionLink("Volver a la Lista", "Index", new { }, new { @class = "btn btn-info" })
+    </div>
+    }
+</div>

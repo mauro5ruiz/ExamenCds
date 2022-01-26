@@ -1,0 +1,48 @@
+﻿@model FinalRuiz2018.Models.Interprete
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<h2>Borrar</h2>
+
+<h3>¿Desea borrar el interprete?</h3>
+<div>
+    <h4>Interprete</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nacionalidad.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nacionalidad.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        @Html.ActionLink("Volver a la Lista", "Index", new { }, new { @class = "btn btn-info" })
+    </div>
+    }
+</div>

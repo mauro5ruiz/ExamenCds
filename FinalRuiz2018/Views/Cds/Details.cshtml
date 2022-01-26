@@ -1,0 +1,119 @@
+﻿@using System.Web.ModelBinding
+@model FinalRuiz2018.Models.Cd
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div>
+            <h4>Cd</h4>
+            <hr />
+            <div class="dl-horizontal"></div>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Interprete)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Interprete.NombreCompleto)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Estilo.Descripcion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Estilo.Descripcion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AñoGrabacion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AñoGrabacion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Pistas)
+                </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Canciones.Count)
+            </dd>
+
+            <dt>
+                    @Html.DisplayNameFor(model => model.PrecioCosto)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PrecioCosto)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PrecioVenta)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PrecioVenta)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Stock)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Stock)
+                </dd>
+            </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.CdId }, new { @class = "btn btn-warning" }) |
+        @Html.ActionLink("Volver a la Lista", "Index", new { }, new { @class = "btn btn-info" })
+        @Html.ActionLink("Agregar Canción", "AgregarCancion1", new { id = Model.CdId }, new { @class = "btn btn-link" })
+    </p>
+    </div>
+        <div class="col-md-6">
+            <h4>Canciones</h4>
+            @if (Model.Canciones.Count > 0)
+            {
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Duracion)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model.Canciones)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Duracion)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            }
+            else
+            {
+                <h4>No hay canciones en el Cd</h4>
+            }
+        </div>
+</div>
+

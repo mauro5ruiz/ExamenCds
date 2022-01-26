@@ -1,0 +1,88 @@
+﻿@model FinalRuiz2018.Models.Dvd
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<h2>Borrar</h2>
+
+<h3>¿Desea borrar el Dvd?</h3>
+<div>
+    <h4>Dvd</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.ProductoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.ProductoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDvd.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDvd.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AñoGrabacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AñoGrabacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
+        @Html.ActionLink("Volver a la Lista", "Index", new { }, new { @class = "btn btn-info" })
+    </div>
+    }
+</div>

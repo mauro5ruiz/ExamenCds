@@ -1,0 +1,66 @@
+﻿@model FinalRuiz2018.Models.Proveedor
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Proveedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RazonSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazonSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NroTelefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NroTelefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ProveedorId },new{@class="btn btn-warning"}) |
+    @Html.ActionLink("Volver a la Lista", "Index", new { }, new { @class = "btn btn-primary" })
+</p>

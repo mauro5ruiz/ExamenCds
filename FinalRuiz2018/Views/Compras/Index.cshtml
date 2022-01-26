@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FinalRuiz2018.Models.Compra>
+
+@{
+    ViewBag.Title = "Vísta";
+}
+
+<h2>Vísta</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create",new{},new{@class="btn btn-success"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Proveedor.RazonSocial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proveedor.RazonSocial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observaciones)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.CompraId },new{@class="btn btn-warning"}) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.CompraId },new{@class="btn btn-info"}) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.CompraId },new{@class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

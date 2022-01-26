@@ -1,0 +1,42 @@
+﻿@model FinalRuiz2018.Models.Compra
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Compra</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Proveedor.RazonSocial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proveedor.RazonSocial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.CompraId },new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Volver a la Lista", "Index", new { }, new { @class = "btn btn-info" })
+</p>

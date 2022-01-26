@@ -1,0 +1,137 @@
+﻿@model FinalRuiz2018.ViewModels.CompraViewModel
+
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Crear</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Compra</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ProveedorId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("ProveedorId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ProveedorId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Fecha, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Fecha, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Observaciones, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Observaciones, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Crear" class="btn btn-success" />
+                            @Html.ActionLink("Volver a la Lista", "Index", new { }, new { @class = "btn btn-info" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<h4>Detalles</h4>
+@if (Model.Detalles.Count > 0)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Detalles[0].)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Details[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Details[0].TaxRate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Details[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Details[0].Quantity)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Details[0].Value)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Detalles)
+        {
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Product.Image))
+                    {
+                        <img src="@Url.Content(item.Product.Image)" alt="Image" style="width:100px;height:100px;max-width: 100%; height: auto;" />
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+
+                <td style="text-align: right">
+                    @Html.DisplayFor(modelItem => item.TaxRate)
+                </td>
+                <td style="text-align: right">
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td style="text-align: right">
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td style="text-align: right">
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+
+                @*<td>
+                    @Html.ActionLink("Delete", "DeleteProduct", new { id = item.ProductId }, new { @class = " btn btn-danger", onclick = "return confirm('Are you sure to delete this item?')" })
+                </td>*@
+            </tr>
+        }
+        <tr>
+            <td colspan="4">
+                Total:
+            </td>
+            <td style="text-align: right">
+                @Html.DisplayFor(model => model.CantidadTotal)
+
+            </td>
+            <td style="text-align: right">
+                @Html.DisplayFor(model => model.PrecioTotal)
+
+            </td>
+        </tr>
+
+    </table>}
+else
+{
+    <h5>No hay productos agregados</h5>
+}
+
+
+

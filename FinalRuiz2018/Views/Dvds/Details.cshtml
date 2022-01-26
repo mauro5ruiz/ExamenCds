@@ -1,0 +1,91 @@
+﻿@model FinalRuiz2018.Models.Dvd
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Dvd</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AñoGrabacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AñoGrabacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duracion)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDvd.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDvd.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioCosto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioCosto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioVenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioVenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stock)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.DvdId }, new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Volver a la Lista", "Index", new { }, new { @class = "btn btn-info" })
+</p>
